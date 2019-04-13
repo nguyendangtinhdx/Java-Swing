@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="555" pageHeight="802" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="03ed407c-c46f-41f3-bad6-9f27e39ea623">
+	<property name="ireport.zoom" value="1.9487171000000014"/>
+	<property name="ireport.x" value="32"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="username" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.Float"/>
+	<field name="datesell" class="java.lang.String"/>
+	<field name="namep" class="java.lang.String"/>
+	<field name="price" class="java.lang.Float"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="56" y="15" width="427" height="20" uuid="52a69a82-ff59-4a83-bc1e-1ced4579705f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Hóa đơn thanh toán]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Immediate">
+			<staticText>
+				<reportElement x="156" y="21" width="100" height="20" uuid="920b9f5d-5cbf-4773-8c53-20c787930c5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tên sản phẩm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="261" y="20" width="100" height="20" uuid="c1ebcecb-a6ff-475b-aa92-7b3373e16c46"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Giá sản phẩm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="20" width="100" height="20" uuid="85138fcd-1657-4990-9989-14ddbd371479"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Số lượng]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="21" width="100" height="20" uuid="4c3df8ec-3650-45b8-bb47-8a5c6715527e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ngày bán]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="56" y="20" width="100" height="20" uuid="d7d70811-1700-4eb3-b93a-a12775921068"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="156" y="2" width="100" height="20" uuid="806d99ee-35b7-47cc-8885-000dce1c53fd"/>
+				<textFieldExpression><![CDATA[$F{namep}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="2" width="100" height="20" uuid="849f0243-af2f-4879-8336-c578820ca8b6"/>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="2" width="100" height="20" uuid="4309a43b-b879-426c-8c8e-95652e83bf36"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="2" width="100" height="20" uuid="0c399633-91f4-4270-ade9-b6a41e738b38"/>
+				<textFieldExpression><![CDATA[$F{datesell}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="56" y="1" width="100" height="20" uuid="7bded2e5-ae3c-4c10-9905-14561c1c4654"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="246" y="0" width="100" height="20" uuid="dd2c49c8-d398-4991-8b11-825114ca5c9d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{username}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="0" width="100" height="20" uuid="efbe1270-27fd-48c7-875a-2224b4c03176"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="136" y="0" width="100" height="20" uuid="057c3d08-f419-499b-93e2-597fa6e1426b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Người bán:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="0" width="100" height="20" uuid="5bd01497-3ca5-4261-987d-1633a910a609"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Tổng tiền: ]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
